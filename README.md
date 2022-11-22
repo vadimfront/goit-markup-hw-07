@@ -1,2 +1,2 @@
-# React Shop Portfolio Project
-[Demo](https://vadimfront.github.io/react-shop)
+# goit-markup-hw-01
+[Demo](https://vadimfront.github.io/goit-markup-hw-01/)
