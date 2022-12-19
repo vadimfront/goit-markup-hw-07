@@ -153,6 +153,7 @@ a {
 .header_contacts {
     display: flex;
     flex-wrap: wrap;
+    gap: 40px;
     margin-left: auto;
 }
 
@@ -163,10 +164,6 @@ a {
 .header_contacts a:hover,
 .header_contacts a:focus {
     color: var(--primary);
-}
-
-.header_contacts a:first-child {
-    margin-right: 40px;
 }
 
 /*  Banner */
