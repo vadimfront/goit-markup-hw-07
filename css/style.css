@@ -2,14 +2,15 @@ body {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
-    color: var(--grey-light);
+    color: var(--grey-type_2);
     letter-spacing: 0.02em;
 }
 
 :root {
-    --grey-dark: #2E2F42;
-    --grey-light: #434455;
-    --grey-bright: #F4F4FD;
+    --grey-type_1: #2E2F42;
+    --grey-type_2: #434455;
+    --grey-type_3: #F4F4FD;
+    --grey-type_4: #8E8F99;
     --primary: #4D5AE5;
     --primary-dark: #404BBF;
     --green: #31D0AA;
@@ -125,7 +126,7 @@ a {
 }
 
 .header_nav a {
-    color: var(--grey-dark);
+    color: var(--grey-type_1);
 }
 
 .header_nav a:hover,
@@ -141,7 +142,7 @@ a {
 }
 
 .header .logo_customStyle {
-    color: var(--grey-dark)
+    color: var(--grey-type_1)
 }
 
 .header_container {
@@ -158,7 +159,7 @@ a {
 }
 
 .header_contacts a {
-    color: var(--grey-light);
+    color: var(--grey-type_2);
 }
 
 .header_contacts a:hover,
@@ -169,29 +170,16 @@ a {
 /*  Banner */
 
 .main_banner {
-    position: relative;
-    background: url(../images/banner.jpg) no-repeat center center;
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+    height: 603px;
+    margin: 0 auto;
+    background-image: linear-gradient(rgb(46, 47, 66, 0.7), rgb(46, 47, 66, 0.7)), url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
-    padding: 192px 0;
     text-align: center;
-}
-
-.main_banner::before {
-    position: absolute;
-    display: block;
-    content: '';
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: var(--grey-dark);
-    opacity: 0.7;
-    z-index: 1;
-}
-
-.main_banner_content {
-    position: relative;
-    z-index: 2;
 }
 
 .main_banner h1 {
@@ -225,10 +213,12 @@ a {
 }
 
 .advantages_image {
+    display: flex;
+    height: 112px;
     margin-bottom: 8px;
-    padding-top: 24px;
-    padding-bottom: 17px;
-    background-color: var(--grey-bright);
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey-type_3);
     text-align: center;
 }
 
@@ -262,7 +252,7 @@ a {
 /*  Team */
 
 .team {
-    background-color: var(--grey-bright);
+    background-color: var(--grey-type_3);
 }
 
 .team .title {
@@ -339,7 +329,7 @@ a {
     font-size: 36px;
     line-height: 42px;
     letter-spacing: 0.03em;
-    color: var(--grey-dark);
+    color: var(--grey-type_1);
     text-align: center;
 }
 
@@ -350,25 +340,24 @@ a {
 }
 
 .customers_item {
+    height: 88px;
     display: flex;
     flex-basis: calc((100% - 120px)/ 6);
-    align-items: center;
-}
-
-.customers_item .icon {
-    width: 104px;
-    height: 56px;
-    transition: all 500ms ease;
 }
 
 .customers_list>.customers_item a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    text-align: center;
-    padding: 15px 0 8px 0;
-    border: 1px solid #8E8F99;
+    height: 100%;
+    color: var(--grey-type_4);
+    border: 1px solid currentColor;
     border-radius: 4px;
-    transition: all 500ms ease;
+}
+
+.customers_item .icon {
+    fill: currentColor;
 }
 
 .customers_item:hover .icon,
@@ -399,7 +388,7 @@ a {
     letter-spacing: 0.04em;
     border-radius: 4px;
 
-    background: var(--grey-bright);
+    background: var(--grey-type_3);
     border: 1px solid #E7E9FC;
     color: #4D5AE5;
     cursor: pointer;
@@ -430,7 +419,7 @@ a {
 
 .tab_list_content {
     padding: 32px 16px;
-    border: 0.5px solid var(--grey-bright);
+    border: 0.5px solid var(--grey-type_3);
     border-top: 0;
 }
 
@@ -441,18 +430,18 @@ a {
     font-weight: 700;
     letter-spacing: 0.02em;
     line-height: 1.2;
-    color: var(--grey-dark);
+    color: var(--grey-type_1);
 }
 
 .tab_subTitle {
-    color: var(--grey-light);
+    color: var(--grey-type_2);
 }
 
 /*  Footer */
 
 .footer {
     padding: 100px 0;
-    background-color: var(--grey-dark);
+    background-color: var(--grey-type_1);
 }
 
 .footer_content {
@@ -490,14 +479,12 @@ a {
     align-content: center;
     align-items: center;
     padding: 8px;
-    background-color: var(--grey-light);
+    background-color: var(--grey-type_2);
     border-radius: 50%;
     transition: all 500ms ease;
 }
 
 .footer_mod-2 .icon {
-    width: 24px;
-    height: 24px;
     fill: var(--white);
 }
 
