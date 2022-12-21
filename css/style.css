@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
@@ -45,9 +49,9 @@ a {
 
 .container {
     max-width: 1128px;
-
     padding: 0 15px;
     margin: 0 auto;
+    box-sizing: content-box;
 }
 
 .hidden {
@@ -170,15 +174,13 @@ a {
 /*  Banner */
 
 .main_banner {
-    display: flex;
-    align-items: center;
-    max-width: 1440px;
     height: 603px;
+    max-width: 1440px;
     margin: 0 auto;
+    padding: 192px 0;
     background-image: linear-gradient(rgb(46, 47, 66, 0.7), rgb(46, 47, 66, 0.7)), url(../images/banner.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
     text-align: center;
 }
 
@@ -305,9 +307,10 @@ a {
 
 .team_social_links>.social_link_item>a {
     display: flex;
-    padding: 12px;
+    width: 40px;
+    height: 40px;
     align-items: center;
-    align-content: center;
+    justify-content: center;
     background-color: var(--primary);
     border-radius: 50%;
     transition: all 500ms ease;
@@ -387,7 +390,6 @@ a {
     line-height: 1.5;
     letter-spacing: 0.04em;
     border-radius: 4px;
-
     background: var(--grey-type_3);
     border: 1px solid #E7E9FC;
     color: #4D5AE5;
@@ -399,6 +401,8 @@ a {
 .tab_control_item>button:focus {
     background-color: var(--primary);
     color: var(--white);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-color: transparent;
 }
 
 .tab_list {
@@ -414,6 +418,14 @@ a {
 
 .tab_list>li {
     width: calc((100% - 54px) / 3);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.tab_list_link {
+    display: block;
+}
+
+.tab_list_link:hover {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
@@ -476,9 +488,10 @@ a {
 
 .footer_mod_social_item>a {
     display: flex;
-    align-content: center;
+    width: 40px;
+    height: 40px;
     align-items: center;
-    padding: 8px;
+    justify-content: center;
     background-color: var(--grey-type_2);
     border-radius: 50%;
     transition: all 500ms ease;
