@@ -19,6 +19,8 @@ body {
     --primary-dark: #404BBF;
     --green: #31D0AA;
     --white: #fff;
+    --white-type_2: #E7E9FC;
+    --modal_bg: #FCFCFC;
 }
 
 h1,
@@ -52,6 +54,16 @@ a {
     padding: 0 15px;
     margin: 0 auto;
     box-sizing: content-box;
+}
+
+.title {
+    margin-bottom: 72px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--grey-type_1);
+    text-align: center;
 }
 
 .hidden {
@@ -90,7 +102,7 @@ a {
     border: none;
     cursor: pointer;
 
-    transition: all 500ms ease;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn_primary:hover,
@@ -119,28 +131,31 @@ a {
     font-weight: 700;
 }
 
-.header_nav ul>li::before {
+.header_nav ul>li::after,
+.header_nav ul>li::after {
     display: block;
     position: absolute;
     bottom: -24px;
     content: '';
     width: 100%;
     height: 0;
-    transition: all 500ms ease;
+    transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header_nav a {
     color: var(--grey-type_1);
 }
 
-.header_nav a:hover,
-.header_nav a:focus,
-.header_nav a:active {
+.header_nav ul>li:hover>a,
+.header_nav ul>li:focus>a,
+.header_nav ul>li:active>a,
+.header_nav ul>li.active>a {
     color: var(--primary);
 }
 
-.header_nav ul>li:hover::before,
-.header_nav ul>li:active::before {
+.header_nav ul>li:hover::after,
+.header_nav ul>li:active::after,
+.header_nav ul>li.active::after {
     height: 4px;
     background-color: var(--primary);
 }
@@ -164,6 +179,7 @@ a {
 
 .header_contacts a {
     color: var(--grey-type_2);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header_contacts a:hover,
@@ -227,16 +243,6 @@ a {
 
 /*  Activities */
 
-.activities h2 {
-    margin-bottom: 72px;
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    line-height: 1.1;
-    text-transform: capitalize;
-    text-align: center;
-}
-
 .activities ul {
     display: flex;
     flex-wrap: wrap;
@@ -255,18 +261,6 @@ a {
 
 .team {
     background-color: var(--grey-type_3);
-}
-
-.team .title {
-    margin-bottom: 72px;
-
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    font-size: 36px;
-    text-align: center;
-
-    line-height: 1.1;
-    text-transform: capitalize;
 }
 
 .team .team_employees {
@@ -313,7 +307,7 @@ a {
     justify-content: center;
     background-color: var(--primary);
     border-radius: 50%;
-    transition: all 500ms ease;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team_social_links>.social_link_item>a:hover {
@@ -327,13 +321,7 @@ a {
 /*  Customers */
 
 .customers .title {
-    margin-bottom: 72px;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 42px;
-    letter-spacing: 0.03em;
-    color: var(--grey-type_1);
-    text-align: center;
+    line-height: 1.16;
 }
 
 .customers_list {
@@ -357,10 +345,12 @@ a {
     color: var(--grey-type_4);
     border: 1px solid currentColor;
     border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers_item .icon {
     fill: currentColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers_item:hover .icon,
@@ -391,10 +381,10 @@ a {
     letter-spacing: 0.04em;
     border-radius: 4px;
     background: var(--grey-type_3);
-    border: 1px solid #E7E9FC;
+    border: 1px solid var(--white-type_2);
     color: #4D5AE5;
     cursor: pointer;
-    transition: all 500ms ease;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tab_control_item>button:hover,
@@ -435,7 +425,6 @@ a {
     border-top: 0;
 }
 
-
 .tab_title {
     margin-bottom: 8px;
     font-size: 20px;
@@ -447,6 +436,91 @@ a {
 
 .tab_subTitle {
     color: var(--grey-type_2);
+}
+
+.tab_list_image {
+    position: relative;
+    overflow: hidden;
+}
+
+.tab_hover {
+    position: absolute;
+    background-color: var(--primary);
+    color: var(--grey-type_3);
+    letter-spacing: 0.02em;
+    padding: 40px 32px;
+    top: 0;
+    bottom: 0;
+    color: var(--primary);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform, color;
+    transform: translateY(100%);
+}
+
+.tab_list_link:hover .tab_hover {
+    color: var(--white);
+    transform: translateY(0);
+}
+
+
+/* Modal */
+
+.scroll_disabled {
+    overflow-y: hidden;
+    padding-right: 17px;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(46, 47, 66, 0.4);
+}
+
+.modal.is-hidden>.modal_content {
+    height: 50%;
+    width: 204px;
+}
+
+.modal_content {
+    position: relative;
+    width: 408px;
+    height: 576px;
+    padding: 24px;
+    background-color: var(--modal_bg);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: width, height;
+}
+
+.modal.is-hidden {
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.modal_close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--white-type_2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 /*  Footer */
@@ -462,6 +536,13 @@ a {
     gap: 120px;
 }
 
+.footer_title {
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+}
+
 .footer .logo_customStyle {
     color: var(--white);
 }
@@ -473,11 +554,6 @@ a {
 
 .footer_mod-1 {
     max-width: 264px;
-}
-
-.footer_mod-2 .title {
-    color: var(--white);
-    margin-bottom: 16px;
 }
 
 .footer_mod_social_links {
@@ -494,7 +570,7 @@ a {
     justify-content: center;
     background-color: var(--grey-type_2);
     border-radius: 50%;
-    transition: all 500ms ease;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer_mod-2 .icon {
@@ -506,5 +582,5 @@ a {
 }
 
 .footer_mod-1 {
-    color: #E7E9FC;
+    color: var(--white-type_2);
 }

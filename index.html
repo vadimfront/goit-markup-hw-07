@@ -45,7 +45,7 @@
 			<section class="main_banner">
 				<div class="container">
 					<h1>Effective Solutions for Your Business</h1>
-					<button type="button" class="btn_primary">Order Service</button>
+					<button type="button" class="btn_primary" data-modal-open>Order Service</button>
 				</div>
 			</section>
 			<section class="advantages section">
@@ -95,7 +95,7 @@
 			</section>
 			<section class="activities section">
 				<div class="container">
-					<h2>What Are We Doing</h2>
+					<h2 class="title">What Are We Doing</h2>
 					<ul>
 						<li>
 							<img src="./images/workTypesImg_1.jpg" width="360" alt="workTypesImg_1" />
@@ -324,7 +324,7 @@
 					<p>Increase the flow of customers and sales for your business with digital marketing & growth solutions.</p>
 				</div>
 				<div class="footer_mod-2">
-					<p class="title">Social media</p>
+					<p class="footer_title">Social media</p>
 					<ul class="footer_mod_social_links">
 						<li class="footer_mod_social_item">
 							<a href="#" rel="noreferrer nofollow" target="_blank">
@@ -358,5 +358,16 @@
 				</div>
 			</div>
 		</footer>
+		<div class="modal is-hidden" id="modal" data-modal>
+			<div class="modal_content">
+				<button class="modal_close" type="button" data-modal-close>
+					<svg class="icon" width="8" height="8">
+						<use href="./images/icons.svg#close"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+
+		<script src="./js/modal.js"></script>
 	</body>
 </html>
