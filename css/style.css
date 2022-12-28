@@ -383,7 +383,7 @@ a {
     color: #4D5AE5;
     cursor: pointer;
     transition-duration: 250ms;
-    transition-property: box-shadow, background-color, border-color;
+    transition-property: box-shadow, background-color, border-color, color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -465,7 +465,7 @@ a {
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: transform, color;
-    transform: translateY(100%);
+    transform: translateY(101%);
 }
 
 .tab_list_link:hover .tab_hover,
@@ -493,6 +493,9 @@ a {
     justify-content: center;
     align-items: center;
     background-color: rgba(46, 47, 66, 0.4);
+    transition-duration: 250ms;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal.is-hidden>.modal_content {
@@ -517,9 +520,6 @@ a {
     opacity: 0;
     overflow: hidden;
     pointer-events: none;
-    transition-duration: 250ms;
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal_close {
