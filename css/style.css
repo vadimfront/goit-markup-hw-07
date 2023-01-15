@@ -233,7 +233,7 @@ a {
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 40px;
+    padding: 64px 40px 40px;
     background: var(--white);
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
     z-index: 999;
@@ -247,13 +247,21 @@ a {
     font-size: 36px;
     line-height: 1.11;
     color: var(--grey-type_1);
+    transition-duration: 250ms;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile_menu_link:hover,
+.mobile_menu_link:active,
+.mobile_menu_link.current {
+    color: var(--primary-dark);
 }
 
 .mobile_menu_list {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-bottom: 284px;
 }
 
 .mobile_menu.is-open {
@@ -261,15 +269,23 @@ a {
 }
 
 .mobile_menu_toggle {
-    margin-left: auto;
-    margin-bottom: 16px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.mobile_menu_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
 }
 
 .mobile_menu_contacts {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-bottom: 48px;
 }
 
 .mobile_menu_social_links {
@@ -282,6 +298,7 @@ a {
     font-size: 36px;
     line-height: 1.11;
     letter-spacing: normal;
+    color: var(--primary)
 }
 
 .mobile_menu_contacts_mail {
@@ -349,9 +366,10 @@ a {
     max-width: 1440px;
     margin: 0 auto;
     padding: 112px 0;
-    background-image: linear-gradient(rgb(46, 47, 66, 0.7), rgb(46, 47, 66, 0.7)), url(../images/banner.jpg);
+    background-image: linear-gradient(rgb(46, 47, 66, 0.7), rgb(46, 47, 66, 0.7)), url(../images/banner_mobile.jpg);
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: cover;
     text-align: center;
 }
 
@@ -365,6 +383,32 @@ a {
     color: #fff;
 }
 
+@media (min-device-pixel-ratio: 2),
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+    .main_banner {
+        background-image: linear-gradient(rgb(46, 47, 66, 0.7), rgb(46, 47, 66, 0.7)), url('../images/banner_mobile2x.jpg');
+    }
+}
+
+@media screen and (min-width: 481px) {
+
+    .main_banner {
+        background-image: linear-gradient(rgb(46, 47, 66, 0.7), rgb(46, 47, 66, 0.7)), url(../images/banner_tablet.jpg);
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .main_banner {
+            background-image: linear-gradient(rgb(46, 47, 66, 0.7), rgb(46, 47, 66, 0.7)), url(../images/banner_tablet2x.jpg);
+        }
+    }
+
+}
+
 @media screen and (min-width: 768px) {
     .main_banner h1 {
         width: 496px;
@@ -374,11 +418,28 @@ a {
 }
 
 
+@media screen and (min-width: 769px) {
+    .main_banner {
+        background-image: linear-gradient(rgb(46, 47, 66, 0.7), rgb(46, 47, 66, 0.7)), url(../images/banner_desktop.jpg);
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        .main_banner {
+            background-image: linear-gradient(rgb(46, 47, 66, 0.7), rgb(46, 47, 66, 0.7)), url(../images/banner_desktop2x.jpg);
+        }
+    }
+
+}
+
 @media screen and (min-width: 1200px) {
     .main_banner {
         height: 600px;
         padding: 187px 0;
     }
+
 }
 
 /*  Advantages */
@@ -763,8 +824,12 @@ a {
 
 .modal_content {
     position: relative;
-    width: 408px;
-    padding: 72px 24px 24px 24px;
+    width: 392px;
+    padding-top: 72px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 24px;
+    padding: 72px 16px 24px 16px;
     background-color: var(--modal_bg);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -931,6 +996,14 @@ a {
 .contact_form_btn:hover,
 .contact_form_btn:focus {
     background-color: var(--primary-dark);
+}
+
+@media screen and (min-width: 768px) {
+    .modal_content {
+        width: 408px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
 
 /*  Footer */
