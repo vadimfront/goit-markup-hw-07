@@ -273,10 +273,13 @@ a {
 .mobile_menu_content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    overflow-y: auto;
+    height: 100%;
+    width: 100%;
     padding: 64px 40px 40px;
+}
+
+.mobile_menu_contacts {
+    margin-top: auto;
 }
 
 .mobile_menu_social_links {
@@ -292,6 +295,10 @@ a {
     letter-spacing: normal;
     color: var(--primary);
     margin-bottom: 40px;
+}
+
+.mobile_menu_contacts_phone:last-child {
+    margin-bottom: 0;
 }
 
 .mobile_menu_contacts_mail {
