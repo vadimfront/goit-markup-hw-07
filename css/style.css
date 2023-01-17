@@ -128,7 +128,7 @@ a {
 
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 552px;
+        max-width: 736px;
     }
 }
 
@@ -238,6 +238,7 @@ a {
     z-index: 999;
     transform: translateX(100%);
     transition: transform 250ms ease-in-out;
+    overflow-y: auto;
 }
 
 .mobile_menu_item {
@@ -321,6 +322,41 @@ a {
     border-radius: 50%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@media screen and (max-height: 530px) {
+    .mobile_menu_content {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .mobile_menu_list {
+        margin-bottom: 40px;
+    }
+
+    .mobile_menu_item {
+        margin-bottom: 20px;
+    }
+
+    .mobile_menu_link {
+        font-size: 21px;
+    }
+
+    .mobile_menu_contacts_phone {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .mobile_menu_social_links {
+        gap: 24px
+    }
+
+    .mobile_menu_contacts_mail {
+        margin-bottom: 24px;
+    }
+
+}
+
 
 @media screen and (min-width: 768px) {
     .header_nav {
@@ -411,6 +447,12 @@ a {
 
 }
 
+@media screen and (max-width: 480px) {
+    .main_banner h1 {
+        width: auto;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .main_banner h1 {
         width: 496px;
@@ -463,7 +505,7 @@ a {
 .advantages ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 72px 24px;
 }
 
 .advantages ul>li {
@@ -490,11 +532,16 @@ a {
     .advantages ul>li {
         flex-basis: calc((100% - 24px)/ 2);
     }
+
 }
 
 @media screen and (min-width: 1200px) {
     .advantages>.container {
         max-width: 1128px;
+    }
+
+    .advantages ul {
+        gap: 24px;
     }
 
     .advantages_title {
@@ -547,13 +594,14 @@ a {
 
 .team {
     background-color: var(--grey-type_3);
+    padding-bottom: 128px;
 }
 
 .team .team_employees {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 24px;
+    gap: 72px 24px;
 }
 
 .team .team_employees>li {
@@ -607,12 +655,20 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+    .team {
+        padding-bottom: 104px;
+    }
+
     .team .team_employees>li {
         flex-basis: calc((100% - 24px)/2);
     }
 }
 
 @media screen and (min-width: 1200px) {
+    .team {
+        padding-bottom: 120px;
+    }
+
     .team .team_employees>li {
         flex-basis: calc((100% - 72px)/4);
     }
@@ -629,6 +685,7 @@ a {
 .customers_list {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     gap: 16px;
 }
 
@@ -664,18 +721,30 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+    .customers>.container {
+        max-width: 552px;
+    }
+
     .customers_item {
         flex-basis: calc((100% - 48px)/ 3);
     }
 
     .customers_list {
-        gap: 24px;
+        gap: 72px 24px;
     }
 }
 
 @media screen and (min-width: 1200px) {
+    .customers>.container {
+        max-width: 1128px;
+    }
+
     .customers_item {
         flex-basis: calc((100% - 120px)/ 6);
+    }
+
+    .customers_list {
+        gap: 24px;
     }
 }
 
@@ -735,7 +804,7 @@ a {
 }
 
 .tab_list>li {
-    width: calc((100% - 54px) / 3);
+    max-width: 394px;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
@@ -795,6 +864,8 @@ a {
     color: var(--white);
     transform: translateY(0);
 }
+
+
 
 
 /* Modal */
@@ -1123,6 +1194,10 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+    .footer>.container {
+        max-width: 552px;
+    }
+
     .footer .logo {
         justify-content: flex-start;
     }
@@ -1150,6 +1225,10 @@ a {
 }
 
 @media screen and (min-width: 1200px) {
+    .footer>.container {
+        max-width: 1128px;
+    }
+
     .footer_content {
         gap: 0;
     }
